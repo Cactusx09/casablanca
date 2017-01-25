@@ -405,7 +405,7 @@ $dy: #ef9e1b;
 				}
 				&:hover{
 					&:before,&:after{
-						transform: translateZ(0)  none;
+						transform:  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -916,7 +916,7 @@ $dy: #ef9e1b;
 					}
 					&:hover{
 						&:before,&:after{
-							transform: translateZ(0)  none;
+							transform:  none;
 							width: 100%;
 							opacity: 1;
 						}
@@ -1161,7 +1161,7 @@ $dy: #ef9e1b;
 				background: none;
 				border-color: $d;
 				svg{
-					transform: translateZ(0)  none;
+					transform:  none;
 				}
 				path{
 					fill: $d;
@@ -1881,7 +1881,7 @@ $dy: #ef9e1b;
 			}
 			&:hover{
 				&:before,&:after{
-					transform: translateZ(0)  none;
+					transform:  none;
 					width: 100%;
 					opacity: 1;
 				}
@@ -2104,7 +2104,7 @@ $dy: #ef9e1b;
 				}
 				&:hover{
 					&:before,&:after{
-						transform: translateZ(0)  none;
+						transform:  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -2348,7 +2348,7 @@ $dy: #ef9e1b;
 				}
 				&:hover{
 					&:before,&:after{
-						transform: translateZ(0)  none;
+						transform:  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -2417,7 +2417,7 @@ $dy: #ef9e1b;
 			&:not(.current){
 				&:hover{
 					&:before,&:after{
-						transform: translateZ(0)  none;
+						transform:  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -2477,7 +2477,7 @@ $dy: #ef9e1b;
 			&:hover{
 				border-color: transparent;
 				&:before,&:after{
-					transform: translateZ(0)  none;
+					transform:  none;
 					width: 100%;
 					opacity: 1;
 				}
@@ -2605,7 +2605,7 @@ $dy: #ef9e1b;
 					&:hover{
 						border-color: transparent;
 						&:before,&:after{
-							transform: translateZ(0)  none;
+							transform:  none;
 							width: 100%;
 							opacity: 1;
 						}
@@ -2722,7 +2722,7 @@ $dy: #ef9e1b;
 					}
 					&:hover{
 						&:before,&:after{
-							transform: translateZ(0)  none;
+							transform:  none;
 							width: 100%;
 							opacity: 1;
 						}
@@ -3013,7 +3013,7 @@ $dy: #ef9e1b;
 					background: none;
 					border-color: $d;
 					svg{
-						transform: translateZ(0)  none;
+						transform:  none;
 					}
 					path{
 						fill: $d;
@@ -3568,11 +3568,6 @@ $dy: #ef9e1b;
 	.flipster__nav{
 		width: calc(100% - 40px);
 	}
-	.s_first__txt{
-		br{
-			display: none;
-		}
-	}
 }
 @media only screen and (max-width: 950.5px) {
 	body,html{
@@ -3605,7 +3600,7 @@ $dy: #ef9e1b;
 		}
 		&__social{
 			position: static;
-			transform: translateZ(0)  none;
+			transform: none;
 			margin-bottom: auto;
 			a{
 				display: inline-flex !important;
@@ -3724,7 +3719,7 @@ $dy: #ef9e1b;
 	.s_contacts__block{
 		top: auto;
 		bottom: 15px;
-		transform: translateZ(0)  none;
+		transform:  none;
 	}
 	.s_trust{
 		padding-top: 70px;
@@ -3768,12 +3763,6 @@ $dy: #ef9e1b;
 @media only screen and (max-width: 700.5px) {
 	.s_video__content_info{
 		flex-direction: column;
-	}
-	.s_about__block{
-		width: 100%;
-		p{
-			flex-grow: 2;
-		}
 	}
 	.popup._about{
 		display: none;
@@ -3885,7 +3874,7 @@ $dy: #ef9e1b;
 				&.active{
 					.container{
 						visibility: visible;
-						transform: translateZ(0)  none;
+						transform:  none;
 					}
 				}
 			}
@@ -4054,9 +4043,70 @@ $dy: #ef9e1b;
 			margin-bottom: 10px;
 		}
 	}
+	.s_about{
+		display: none !important;
+	}
+	input[type=radio].css-checkbox+label.css-label{
+		line-height: 1 !important;
+	}
 }
 @media only screen and (max-width: 400.5px) {
-
+	body,html{
+		font-size: 12px;
+		overflow-x: hidden;
+	}
+	section{
+		padding-top: 40px !important;
+	}
+	.container{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.s_style__head ._outline{
+		padding-left: 10px;
+		padding-right: 10px;
+		width: 100%;
+	}
+	.s_price__item_body{
+		max-height: 195px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.popup__form_teacher{
+		flex-wrap: wrap;
+		justify-content: flex-start !important;
+		p{
+			margin-bottom: 7px;
+		}
+		.select-wrp{
+			margin-left: 0;
+			min-width: 100%;
+		}
+	}
+	.popup{
+		padding-left: 15px !important;
+		padding-right: 14px !important;
+		.s_price__item_col{
+			margin-left: 0;
+			margin-right: 2px;
+			min-width: 55px;
+		}
+	}
+	.s_once__choose label .g_exclusive{
+		transform: none !important;
+	}
+	.s_contacts__block{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.flipster__nav__child .flipster__nav__link{
+		font-size: 1em;
+		line-height: 25px;
+	}
+	.footer__logo{
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 /* ==========================================================
@@ -4195,7 +4245,7 @@ label.css-label {
 	}
 	to {
 		opacity: 1;
-		transform: translateZ(0)  none;
+		transform:  none;
 	}
 }
 @keyframes ani-mouse {
