@@ -471,6 +471,8 @@ $dy: #ef9e1b;
 .footer{
 	padding: 13px 0 10px;
 	background-color: $d;
+	position: relative;
+	z-index: 99;
 	._flex_sb_c{
 		max-width: 1828px;
 		margin-left: auto;
@@ -2248,32 +2250,32 @@ $dy: #ef9e1b;
 		background-color: #fff;
 		padding: 70px 40px 0;
 	}
-	&__back{
-		@extend ._flex_c_c;
-		flex-direction: column;
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 130px;
-		height: 100%;
-		&:hover{
-			path{
-				fill: $y;
-			}
-		}
-		span{
-			color: #bababa;
-			font-size: 1.5em;
-			font-weight: 400;
-			margin-top: 25px;
-		}
-		svg{
-			margin-top: auto;
-			margin-bottom: auto;
-			path{
-				transition: $t;
-			}
-		}
+}
+.back{
+	@extend ._flex_c_c;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 130px;
+	height: calc(100vh - 194px);
+	transition: $t;
+	&:hover{
+		background-color: rgba(0, 0, 0, 0.06);
+	}
+	span{
+		color: #bababa;
+		font-size: 1.5em;
+		font-weight: 400;
+		margin-top: 25px;
+	}
+	svg{
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	&._fixed{
+		position: fixed;
+		height: 100vh;
 	}
 }
 .s_404{

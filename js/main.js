@@ -208,20 +208,17 @@ $(document).ready(function () {
 	//cards slider
 	if ($('*').is('.s_style__cards')) {
 		var sl_cards = $('.s_style__cards').flipster({
-			scrollwheel: false,
-			nav: true
+			nav: true,
+			touch: true,
+			scrollwheel: false
 		});
-		//cards filter
-		$('.s_style__head_filter span').click(function(){
-			var name = $(this).data('filter');
-			if(name!='*'){
-				$(this).closest('.s_style').find('li').show().not('._'+name).hide();
-			}else{
-				$(this).closest('.s_style').find('li').show();
+		var first_hover_n = 0;
+		$('.s_style__cards_item').hover(function(){
+			if(first_hover){
+				$(this).trigger('click');
 			}
-			setTimeout(function(){
-				sl_cards.flipster('index');
-			},500);
+		},function(){
+			first_hover = true;
 		});
 	}
 	//fixed menu
@@ -232,6 +229,17 @@ $(document).ready(function () {
 				$('.s_first__nav').addClass('_fixed');
 			} else {
 				$('.s_first__nav').removeClass('_fixed');
+			}
+		});
+	}
+	//fixed back
+	if ($('*').is('.back')) {
+		var elemePosition = $('.back').offset();
+		$(window).scroll(function () {
+			if ($(window).scrollTop() > elemePosition.top) {
+				$('.back').addClass('_fixed');
+			} else {
+				$('.back').removeClass('_fixed');
 			}
 		});
 	}
@@ -292,6 +300,16 @@ $(document).ready(function () {
 				svgflag = true;
 			}
 		};
+		//smooth scroll event
+		var scrollTimeout;  // global for any pending scrollTimeout
+
+		$(window).scroll(function () {
+			if (scrollTimeout) {
+				clearTimeout(scrollTimeout);
+				scrollTimeout = null;
+			}
+			scrollTimeout = setTimeout(scrollHandler, 50);
+		});
 	}
 	//gmaps
 	if ($('*').is('#map')){
@@ -408,16 +426,6 @@ $(document).ready(function () {
 	});
 	$('.s_first__close').click(function(){
 		$('.s_first__nav').removeClass('active');
-	});
-	//smooth scroll event
-	var scrollTimeout;  // global for any pending scrollTimeout
-
-	$(window).scroll(function () {
-		if (scrollTimeout) {
-			clearTimeout(scrollTimeout);
-			scrollTimeout = null;
-		}
-		scrollTimeout = setTimeout(scrollHandler, 50);
 	});
 });
 //gmap init
