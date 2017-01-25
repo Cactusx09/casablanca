@@ -753,6 +753,11 @@ $dy: #ef9e1b;
 							inset 0 -80px 124px 0 rgba(0, 0, 0, 0.5),;
 						}
 					}
+					&_more{
+						svg{
+							animation: arrow $t*1.5 infinite alternate;
+						}
+					}
 				}
 			}
 		}
@@ -862,9 +867,15 @@ $dy: #ef9e1b;
 				background-color: rgba($d,.7);
 				span{
 					transform: translateZ(0)  scale(.9);
+					color: $y;
 				}
 				svg,img{
 					transform: translateZ(0)  translateX(7px);
+				}
+				svg{
+					path{
+						fill: $y;
+					}
 				}
 			}
 		}
@@ -4322,6 +4333,14 @@ label.css-label {
 	}
 	to {
 		opacity: 0.3;
+	}
+}
+@keyframes arrow {
+	from {
+		transform: translateX(10px);
+	}
+	to {
+		transform: translateX(-3px);
 	}
 }
 .scroll-btn > * {
