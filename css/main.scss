@@ -151,6 +151,26 @@ $g: #f1f1f1;
 $r: #ff0000;
 $dy: #ef9e1b;
 
+#preloader{
+	position: fixed;
+	width: 100%;
+	left: 0;
+	height: 100%;
+	top: 0;
+	background-color: #fff;
+	@extend ._flex_c_c;
+	z-index: 999999;
+	opacity: 1;
+	transition: opacity $t*2;
+	animation: opacity 10s;
+	will-change: opacity;
+	&.done{
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+
 /* ==========================================================
    _global
    ========================================================== */
@@ -194,10 +214,10 @@ $dy: #ef9e1b;
 			fill: #fff;
 		}
 		span{
-			transform: scale(.95);
+			transform: translateZ(0)  scale(.95);
 		}
 		svg,img{
-			transform: translateX(-7px);
+			transform: translateZ(0)  translateX(-7px);
 		}
 	}
 	&:active{
@@ -250,10 +270,10 @@ $dy: #ef9e1b;
 			fill: #fff;
 		}
 		span{
-			transform: scale(.95);
+			transform: translateZ(0)  scale(.95);
 		}
 		svg,img{
-			transform: translateX(7px);
+			transform: translateZ(0)  translateX(7px);
 		}
 	}
 	&:active{
@@ -292,7 +312,7 @@ $dy: #ef9e1b;
 			fill: #fff;
 		}
 		svg{
-			transform: scale(.75);
+			transform: translateZ(0)  scale(.75);
 		}
 	}
 	&:active{
@@ -345,7 +365,7 @@ $dy: #ef9e1b;
 	&__logo{
 		transition: $t;
 		&:hover{
-			transform: scale(.95);
+			transform: translateZ(0)  scale(.95);
 		}
 	}
 	&__left{
@@ -385,7 +405,7 @@ $dy: #ef9e1b;
 				}
 				&:hover{
 					&:before,&:after{
-						transform: none;
+						transform: translateZ(0)  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -429,7 +449,7 @@ $dy: #ef9e1b;
 				fill: #fff;
 			}
 			svg{
-				transform: scale(.75);
+				transform: translateZ(0)  scale(.75);
 			}
 		}
 		&:active{
@@ -510,7 +530,7 @@ $dy: #ef9e1b;
 					fill: #fff;
 				}
 				svg{
-					transform: scale(.75);
+					transform: translateZ(0)  scale(.75);
 				}
 			}
 			&:active{
@@ -546,7 +566,7 @@ $dy: #ef9e1b;
 		position: absolute;
 		right: 30px;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translateZ(0) translateY(-50%);
 		a{
 			width: 49px;
 			height: 49px;
@@ -559,12 +579,15 @@ $dy: #ef9e1b;
 			inset 0 0 0 0 $y,
 			inset 0 0 0 0 rgba($d,.7),
 			inset 0 0 0 0 $dy;
+			will-change: box-shadow,background-color,color;
 			transition: $t;
 			svg{
 				transition: $t;
+				will-change: transform;
 			}
 			path{
 				transition: $t;
+				will-change: fill;
 			}
 			&:hover{
 				background-color: #1d1d1d;
@@ -578,7 +601,7 @@ $dy: #ef9e1b;
 					fill: #fff;
 				}
 				svg{
-					transform: scale(.75);
+					transform: translateZ(0)  scale(.75);
 				}
 			}
 			&:active{
@@ -688,7 +711,7 @@ $dy: #ef9e1b;
 			&--past{
 				.s_style__cards{
 					&_name{
-						transform: rotate(-90deg);
+						transform: translateZ(0)  rotate(-90deg);
 						opacity: 1;
 						bottom: 115px;
 					}
@@ -697,7 +720,7 @@ $dy: #ef9e1b;
 			&--future{
 				.s_style__cards{
 					&_name{
-						transform: rotate(90deg);
+						transform: translateZ(0)  rotate(90deg);
 						bottom: 115px;
 						opacity: 1;
 						left: 60px;
@@ -770,7 +793,7 @@ $dy: #ef9e1b;
 			}
 		}
 		&_name{
-			transform: rotate(0) translateX(-200%);
+			transform: translateZ(0)  rotate(0) translateX(-200%);
 			position: absolute;
 			z-index: 5;
 			color: #fff;
@@ -830,10 +853,10 @@ $dy: #ef9e1b;
 				color: #fff;
 				background-color: rgba($d,.7);
 				span{
-					transform: scale(.9);
+					transform: translateZ(0)  scale(.9);
 				}
 				svg,img{
-					transform: translateX(7px);
+					transform: translateZ(0)  translateX(7px);
 				}
 			}
 		}
@@ -891,7 +914,7 @@ $dy: #ef9e1b;
 					}
 					&:hover{
 						&:before,&:after{
-							transform: none;
+							transform: translateZ(0)  none;
 							width: 100%;
 							opacity: 1;
 						}
@@ -1018,6 +1041,7 @@ $dy: #ef9e1b;
 		margin: 0 50px;
 		max-width: 200px;
 		min-width: 200px;
+		will-change: min-width,width;
 		&.active{
 			min-width: 700px;
 			cursor: grab;
@@ -1084,7 +1108,7 @@ $dy: #ef9e1b;
 			&:hover{
 				color: $dy;
 				svg{
-					transform: translate(10px);
+					transform: translateZ(0)  translate(10px);
 				}
 			}
 			svg{
@@ -1100,6 +1124,7 @@ $dy: #ef9e1b;
 			transition: $t*2;
 			text-align: right;
 			opacity: 0.7;
+			will-change: width, -webkit-filter,filter,opacity;
 			filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
 			filter: gray;
 			-webkit-filter: grayscale(100%);
@@ -1115,6 +1140,7 @@ $dy: #ef9e1b;
 				width: 0;
 				height: 0;
 				bottom: 0;
+				will-change: border-width;
 				right: 15px;
 				border-style: solid;
 				border-width: 0 0 321px 176px;
@@ -1133,7 +1159,7 @@ $dy: #ef9e1b;
 				background: none;
 				border-color: $d;
 				svg{
-					transform: none;
+					transform: translateZ(0)  none;
 				}
 				path{
 					fill: $d;
@@ -1173,6 +1199,7 @@ $dy: #ef9e1b;
 .s_price{
 	background-image: url(../images/bg/bg_4.jpg);
 	background-attachment: fixed;
+	background-size: auto;
 	padding: 110px 0 90px;
 	margin-top: -3px;
 	position: relative;
@@ -1204,7 +1231,7 @@ $dy: #ef9e1b;
 					max-height: 1599px;
 				}
 				&_arr{
-					transform: rotate(180deg);
+					transform: translateZ(0)  rotate(180deg);
 				}
 			}
 		}
@@ -1340,7 +1367,7 @@ $dy: #ef9e1b;
 					fill: #fff;
 				}
 				svg{
-					transform: scale(.75);
+					transform: translateZ(0)  scale(.75);
 				}
 			}
 			&:active{
@@ -1405,7 +1432,7 @@ $dy: #ef9e1b;
 				margin-left: 3px;
 				padding-top: 3px;
 				padding-bottom: 3px;
-				transform: translateY(-3px);
+				transform: translateZ(0)  translateY(-3px);
 			}
 			span{
 				font-weight: 700;
@@ -1588,7 +1615,7 @@ $dy: #ef9e1b;
 				inset 0 0 2px 4px rgba($d,.7),
 				inset 0 0 0 8px $dy;
 				>div:last-of-type{
-					transform: scale(.95) translateX(-6px);
+					transform: translateZ(0)  scale(.95) translateX(-6px);
 				}
 			}
 			&:active{
@@ -1852,7 +1879,7 @@ $dy: #ef9e1b;
 			}
 			&:hover{
 				&:before,&:after{
-					transform: none;
+					transform: translateZ(0)  none;
 					width: 100%;
 					opacity: 1;
 				}
@@ -1871,7 +1898,7 @@ $dy: #ef9e1b;
 			&:hover{
 				color: $dy;
 				svg{
-					transform: translate(10px);
+					transform: translateZ(0)  translate(10px);
 				}
 			}
 			svg{
@@ -1935,7 +1962,7 @@ $dy: #ef9e1b;
 			max-width: 260px;
 			transition: $t;
 			&:hover{
-				transform: translateY(-20px);
+				transform: translateZ(0)  translateY(-20px);
 				.btn{
 					max-height: 60px;
 					opacity: 1;
@@ -1982,7 +2009,7 @@ $dy: #ef9e1b;
 				max-height: 0;
 				opacity: 0;
 				overflow: hidden;
-				transform: translateY(50px);
+				transform: translateZ(0)  translateY(50px);
 			}
 		}
 		&_new{
@@ -1994,7 +2021,7 @@ $dy: #ef9e1b;
 			position: absolute;
 			top: -15px;
 			left: 50%;
-			transform: translateX(-50%) translateZ(0);
+			transform: translateZ(0)  translateX(-50%) translateZ(0);
 		}
 		&_hit{
 			padding: 7px 20px;
@@ -2006,7 +2033,7 @@ $dy: #ef9e1b;
 			color: #fff;
 			top: -15px;
 			left: 50%;
-			transform: translateX(-50%) translateZ(0);
+			transform: translateZ(0)  translateX(-50%) translateZ(0);
 		}
 	}
 }
@@ -2075,7 +2102,7 @@ $dy: #ef9e1b;
 				}
 				&:hover{
 					&:before,&:after{
-						transform: none;
+						transform: translateZ(0)  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -2112,7 +2139,7 @@ $dy: #ef9e1b;
 		position: absolute;
 		padding: 35px;
 		top: 50%;
-		transform: translateZ(0) translateY(-50%);
+		transform: translateZ(0)  translateZ(0) translateY(-50%);
 		left: 3%;
 		background-color: #fff;
 		.h2{
@@ -2319,7 +2346,7 @@ $dy: #ef9e1b;
 				}
 				&:hover{
 					&:before,&:after{
-						transform: none;
+						transform: translateZ(0)  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -2388,7 +2415,7 @@ $dy: #ef9e1b;
 			&:not(.current){
 				&:hover{
 					&:before,&:after{
-						transform: none;
+						transform: translateZ(0)  none;
 						width: 100%;
 						opacity: 1;
 					}
@@ -2408,7 +2435,7 @@ $dy: #ef9e1b;
 		iframe{
 			margin-bottom: 50px;
 		}
-		.h2{
+		h2{
 			margin-bottom: 35px;
 		}
 		p{
@@ -2448,13 +2475,13 @@ $dy: #ef9e1b;
 			&:hover{
 				border-color: transparent;
 				&:before,&:after{
-					transform: none;
+					transform: translateZ(0)  none;
 					width: 100%;
 					opacity: 1;
 				}
 			}
 		}
-		&_ul{
+		>ul{
 			margin-top: 20px;
 			margin-bottom: 50px;
 			li{
@@ -2576,7 +2603,7 @@ $dy: #ef9e1b;
 					&:hover{
 						border-color: transparent;
 						&:before,&:after{
-							transform: none;
+							transform: translateZ(0)  none;
 							width: 100%;
 							opacity: 1;
 						}
@@ -2605,7 +2632,7 @@ $dy: #ef9e1b;
 				position: absolute;
 				bottom: -12px;
 				left: 50%;
-				transform: translateX(-50%);
+				transform: translateZ(0)  translateX(-50%);
 			}
 		}
 		&_body{
@@ -2693,7 +2720,7 @@ $dy: #ef9e1b;
 					}
 					&:hover{
 						&:before,&:after{
-							transform: none;
+							transform: translateZ(0)  none;
 							width: 100%;
 							opacity: 1;
 						}
@@ -2923,7 +2950,7 @@ $dy: #ef9e1b;
 	z-index: 99999;
     left: 50%;
     transition: all $t, box-shadow $t*1.5;
-    transform: translate3d( 0, -50%, 0);
+    transform: translateZ(0) translate3d( 0, -50%, 0);
     -webkit-font-smoothing: antialiased;
     top: 50%;
     background-color: #ffffff;
@@ -2937,6 +2964,7 @@ $dy: #ef9e1b;
 	inset 0 0 40px 70px rgba($d,.7),
 	inset 0 0 0 150px $dy,
 	inset 0 0 0 220px darken($dy,10);
+	will-change: transform, opacity, box-shadow;
 	&._panorama{
 		max-width: 100%;
 		height: 100%;
@@ -2983,7 +3011,7 @@ $dy: #ef9e1b;
 					background: none;
 					border-color: $d;
 					svg{
-						transform: none;
+						transform: translateZ(0)  none;
 					}
 					path{
 						fill: $d;
@@ -3230,7 +3258,7 @@ $dy: #ef9e1b;
 			background-color: $d;
 			border-color: $y;
 			span{
-				transform: scale(.75);
+				transform: translateZ(0)  scale(.75);
 			}
 		}
 		&:active{
@@ -3575,7 +3603,7 @@ $dy: #ef9e1b;
 		}
 		&__social{
 			position: static;
-			transform: none;
+			transform: translateZ(0)  none;
 			margin-bottom: auto;
 			a{
 				display: inline-flex !important;
@@ -3694,7 +3722,7 @@ $dy: #ef9e1b;
 	.s_contacts__block{
 		top: auto;
 		bottom: 15px;
-		transform: none;
+		transform: translateZ(0)  none;
 	}
 	.s_trust{
 		padding-top: 70px;
@@ -3769,7 +3797,7 @@ $dy: #ef9e1b;
 @media only screen and (max-height: 700.5px) {
 	.popup{
 		position: absolute !important;
-		transform:translateY(30px);
+		transform: translateZ(0) translateY(30px);
 		margin-top: 0 !important;
 		margin-left: 0 !important;
 		padding: 30px 20px !important;
@@ -3812,7 +3840,7 @@ $dy: #ef9e1b;
 			display: none;
 		}
 		&__hamb{
-			text-transform: uppercase;
+			text-transform: translateZ(0)  uppercase;
 			line-height: 40px;
 			font-size: 1.2em;
 			text-align: right;
@@ -3849,13 +3877,13 @@ $dy: #ef9e1b;
 					font-size: 1.5em;
 					z-index: 9999;
 					visibility: hidden;
-					transform: translateY(-107%);
+					transform: translateZ(0)  translateY(-107%);
 					transition: $t;
 				}
 				&.active{
 					.container{
 						visibility: visible;
-						transform: none;
+						transform: translateZ(0)  none;
 					}
 				}
 			}
@@ -3895,7 +3923,7 @@ $dy: #ef9e1b;
 				background-color: $d;
 				border-color: $y;
 				span{
-					transform: scale(.75);
+					transform: translateZ(0)  scale(.75);
 				}
 			}
 			&:active{
@@ -3940,7 +3968,7 @@ $dy: #ef9e1b;
 	}
 	.popup{
 		position: absolute !important;
-		transform:translateY(30px);
+		transform: translateZ(0) translateY(30px);
 		margin-top: 0 !important;
 		margin-left: 0 !important;
 		padding: 30px 20px !important;
@@ -4161,48 +4189,11 @@ label.css-label {
 @keyframes tab_top {
 	from {
 		opacity: 0;
-		transform: translateY(-102%);
+		transform: translateZ(0)  translateY(-102%);
 	}
 	to {
 		opacity: 1;
-		transform: none;
-	}
-}
-
-@-webkit-keyframes ani-mouse {
-	0% {
-	opacity: 1;
-	top: 29%;
-	}
-	15% {
-	opacity: 1;
-	top: 50%;
-	}
-	50% {
-	opacity: 0;
-	top: 50%;
-	}
-	100% {
-	opacity: 0;
-	top: 29%;
-	}
-}
-@-moz-keyframes ani-mouse {
-	0% {
-	opacity: 1;
-	top: 29%;
-	}
-	15% {
-	opacity: 1;
-	top: 50%;
-	}
-	50% {
-	opacity: 0;
-	top: 50%;
-	}
-	100% {
-	opacity: 0;
-	top: 29%;
+		transform: translateZ(0)  none;
 	}
 }
 @keyframes ani-mouse {
@@ -4221,6 +4212,14 @@ label.css-label {
 	100% {
 	opacity: 0;
 	top: 29%;
+	}
+}
+@keyframes opacity {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.3;
 	}
 }
 .scroll-btn > * {
@@ -4342,7 +4341,7 @@ label.css-check_label {
 			}
         }
         &.active svg{
-            transform: scaleY(-1);
+            transform: translateZ(0)  scaleY(-1);
         }
     }
     .current_option:hover {
@@ -4508,10 +4507,10 @@ label.css-check_label {
 @keyframes fadeLeft {
 	from {
 		opacity: 0;
-		transform: translate3d(100%,0,0);
+		transform: translateZ(0)  translate3d(100%,0,0);
 	}
 	to {
-		transform: translate3d(0);
+		transform: translateZ(0)  translate3d(0);
 		opacity: 1;
 	}
 }

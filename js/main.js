@@ -1,3 +1,6 @@
+window.onload = function(){
+	preloader.className = 'done';
+};
 $(document).ready(function () {
 	//first screen bg slider
 	if ($('*').is('.s_first')){
@@ -280,15 +283,15 @@ $(document).ready(function () {
 	var svgflag = false;
 	if ($('*').is('.s_about__block_ico') && !svgflag){
 		var svg = $('.s_about__block_ico svg').drawsvg({
-			duration: 8500
+			duration: 5500
 		});
 		var elPosition = $('.s_about__block_ico').offset();
-		$(window).scroll(function () {
+		scrollHandler = function () {
 			if ($(window).scrollTop() > elPosition.top-500 && !svgflag) {
 				svg.drawsvg('animate');
 				svgflag = true;
 			}
-		});
+		};
 	}
 	//gmaps
 	if ($('*').is('#map')){
@@ -406,7 +409,18 @@ $(document).ready(function () {
 	$('.s_first__close').click(function(){
 		$('.s_first__nav').removeClass('active');
 	});
+	//smooth scroll event
+	var scrollTimeout;  // global for any pending scrollTimeout
+
+	$(window).scroll(function () {
+		if (scrollTimeout) {
+			clearTimeout(scrollTimeout);
+			scrollTimeout = null;
+		}
+		scrollTimeout = setTimeout(scrollHandler, 50);
+	});
 });
+//gmap init
 function mapInitialize(el_id) {
 	var moscow = new google.maps.LatLng(55.759119, 37.624978);
 	var stylez = [
@@ -591,6 +605,7 @@ function mapInitialize(el_id) {
 		icon: '../images/marker.png'
 	});
 }
+//lazy load images
 !function(window){
   var $q = function(q, res){
         if (document.querySelectorAll) {
