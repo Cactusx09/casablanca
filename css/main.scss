@@ -353,6 +353,8 @@ $dy: #ef9e1b;
 	top: 0;
 	left: 0;
 	width: 100%;
+	padding-left: 60px;
+	padding-right: 60px;
 	color: #fff;
 	padding-top: 55px;
 	z-index: 999;
@@ -442,7 +444,7 @@ $dy: #ef9e1b;
 			box-shadow:
 			inset 0 0 0 2px $y,
 			inset 0 0 2px 2px rgba($d,.7),
-			inset 0 0 0 6px $dy;
+			inset 0 0 0 5px $dy;
 			color: #fff;
 			background-color: $d;
 			path{
@@ -465,6 +467,7 @@ $dy: #ef9e1b;
 		position: static;
 		background: url('../images/bg_slider/1.jpg') no-repeat center top 70%;
 		background-size: cover;
+		padding-top: 30px;
 		padding-bottom: 30px;
 	}
 }
@@ -566,7 +569,7 @@ $dy: #ef9e1b;
 	}
 	&__social{
 		position: absolute;
-		right: 30px;
+		right: 94px;
 		top: 50%;
 		transform: translateZ(0) translateY(-50%);
 		a{
@@ -596,7 +599,7 @@ $dy: #ef9e1b;
 				box-shadow:
 				inset 0 0 0 2px $y,
 				inset 0 0 2px 2px rgba($d,.7),
-				inset 0 0 0 6px $dy;
+				inset 0 0 0 5px $dy;
 				color: #fff;
 				background-color: $d;
 				path{
@@ -625,7 +628,7 @@ $dy: #ef9e1b;
 		width: 100%;
 		left: 0;
 		z-index: 999;
-		background-color: rgba(0, 0, 0, 0.25);
+		background-color: rgba(0, 0, 0, 0.4);
 		transition: $t;
 		border-bottom: 1px solid transparent;
 		&._fixed{
@@ -680,14 +683,14 @@ $dy: #ef9e1b;
 .s_style{
 	color: #fff;
 	background-image: url(../images/bg/bg_2.jpg);
-	padding: 170px 0;
+	padding: 70px 0 30px;
 	.h2{
 		margin-bottom: 10px;
 	}
 	&__head{
 		@extend ._flex_sb_c;
 		margin-top: 25px;
-		margin-bottom: 80px;
+		margin-bottom: 60px;
 		._outline{
 			font-size: 1.06em;
 		}
@@ -826,11 +829,11 @@ $dy: #ef9e1b;
 			span{
 				width: 9px;
 				height: 9px;
-				border: 1px solid $y;
+				border: 1px solid $r;
 				border-radius: 50%;
 				display: inline-block;
 				&._filled{
-					background-color: $y;
+					background-color: $r;
 				}
 			}
 		}
@@ -846,6 +849,9 @@ $dy: #ef9e1b;
 			inset 0 0 0 0 $dy;
 			span,img,svg{
 				transition: transform $t;
+			}
+			path{
+				fill: #fff;
 			}
 			&:hover{
 				box-shadow:
@@ -956,7 +962,7 @@ $dy: #ef9e1b;
 			inset 0 0 0 0 $y,
 			inset 0 0 0 0 rgba($d,.7),
 			inset 0 0 0 0 $dy;
-			transition: $t;
+			transition: left 500ms ease-in-out, top 500ms ease-in-out, opacity 500ms ease-in-out, box-shadow $t !important;
 			&:hover{
 				box-shadow:
 					inset 0 0 0 5px $y,
@@ -2356,7 +2362,6 @@ $dy: #ef9e1b;
 			}
 		}
 	}
-
 	&__right{
 		min-width: 400px;
 		padding: 40px 40px 20px;
@@ -2375,6 +2380,42 @@ $dy: #ef9e1b;
 				font-weight: 500;
 				svg{
 					margin-right: 10px;
+				}
+			}
+		}
+		&_willbe{
+			min-width: 300px;
+			max-width: 400px;
+			border: 1px solid  #d6d6d6;
+			h3{
+				font-size: 1.63em;
+				font-weight: 500;
+				padding: 35px;
+				background-color: $y;
+			}
+			&_info{
+				padding: 20px 35px;
+				background-color: #fffcde;
+				border-top: 1px solid  #d6d6d6;
+				border-bottom: 1px solid  #d6d6d6;
+				@extend ._flex_sb_c;
+				span{
+					font-size: 1.25em;
+					font-weight: 500;
+					svg{
+						margin-right: 10px;
+					}
+				}
+			}
+			form{
+				padding: 25px 35px 35px;
+				.g_input{
+					border: 1px solid rgba(0, 0, 0, 0.35);
+					width: 100%;
+					margin-bottom: 17px;
+				}
+				.btn{
+					width: 100%;
 				}
 			}
 		}
@@ -3349,6 +3390,15 @@ $dy: #ef9e1b;
 		}
 	}
 }
+@media only screen and (max-width: 1625.5px) {
+	.header{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.s_first__social{
+		right: 30px;
+	}
+}
 @media only screen and (max-width: 1530.5px) {
 	.s_enough._with_form{
 		height: auto;
@@ -4314,9 +4364,7 @@ label.css-label {
 	margin: -4px 0 0 -4px;
 	background: white;
 	border-radius: 50%;
-	-webkit-animation: ani-mouse 2.5s linear infinite;
-	-moz-animation: ani-mouse 2.5s linear infinite;
-	animation: ani-mouse 2.5s linear infinite;
+	animation: ani-mouse 1.5s linear infinite;
 }
 
 input[type=checkbox].css-checkbox {

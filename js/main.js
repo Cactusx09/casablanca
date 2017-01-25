@@ -212,9 +212,6 @@ $(document).ready(function () {
 			touch: true,
 			scrollwheel: false
 		});
-		$('.s_style__cards_item').hover(function(){
-			$(this).trigger('click');
-		});
 	}
 	//fixed menu
 	if ($('*').is('.s_first__nav')) {
