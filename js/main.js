@@ -258,22 +258,42 @@ $(document).ready(function () {
 			mapInitialize('popup_map');
 		}else if(name=='_about'){
 			sl_teachers2.activate(sl_teachers_n);
-		}else if(name=='_teacher' && $(this).closest('._about').length){
-			$('.popup._about').removeClass('visible');
+		}else if(name=='_teacher'){
+			var pop = $('.popup._teacher');
+			if($(this).closest('._about').length){
+				$('.popup._about').removeClass('visible');
+			}
+			var cont = $('.s_teachers__item_txt').eq(sl_teachers_n);
+			var element = cont.find('.h2');
+			if(element.find('span').length){
+				pop.find('.s_once__choose label').last().show().prev().prop('checked',true);
+			}else{
+				pop.find('.s_once__choose label').last().hide();
+			}
+			pop.find('.popup__form_trial span').text(cont.find('h5').text());
 		}else if(name=='_trial'){
 			var text;
-			$(this).prev().find('.css-checkbox').each(function(){
-				if($(this).prop('checked')){
-					text = $(this).next('label').find('span').not('.g_exclusive').text();
-				}
-			});
-			$('.popup._trial').find('.btn b').text(text+' р.');
+			if($(this).closest('.s_card__trial_body').length){
+				text = $(this).closest('.s_card__trial_body').find('h3 span').text();
+				text =
+				$('.popup._trial').find('.btn b').text(text+' р.');
+			} else{
+				$(this).prev().find('.css-checkbox').each(function(){
+					if($(this).prop('checked')){
+						text = $(this).next('label').find('span').not('.g_exclusive').text();
+					}
+				});
+				$('.popup._trial').find('.btn b').text(text+' р.');
+			}
+		}else if(name=='_case'){
+			var popup = $('.popup._case');
+			var btn = $(this);
+			popup.find('h5').text(btn.prev('h5').text());
+			popup.find('h2').text(btn.prevAll('h3').text());
+			popup.find('h4').html(btn.prevAll('h4').html());
 		}
-		if (window.matchMedia('(max-height: 700px)').matches ||
-		   window.matchMedia('(max-width: 585px)').matches) {
-			var px = window.pageYOffset;
-			$('.popup').css('top',px+'px');
-		}
+		var px = window.pageYOffset;
+		$('.popup').css('top',px+'px');
 	});
 	$('.popup .s_once__choose label').click(function(){
 		var text = $(this).find('span').not('.g_exclusive').text();
@@ -342,8 +362,8 @@ $(document).ready(function () {
 		}
         $(this).toggleClass('active');
 		choosenValue = $(this).data("value");
-		select.find('input').val(choosenValue);
-		select.find('select').val(choosenValue).prop("selected", true);
+		select.find('select option').removeAttr('selected');
+		select.find('select option[value="'+choosenValue+'"]').attr('selected',true);
         span = select.find('.current_option>span');
         var str = $(this).text();
         span.text(str);
@@ -585,7 +605,7 @@ function mapInitialize(el_id) {
 	  }
 	];
 	var mapOptions = {
-		zoom: 16,
+		zoom: 17,
 		center: moscow,
 		mapTypeControl: false,
 		scrollwheel: false,
@@ -604,6 +624,123 @@ function mapInitialize(el_id) {
 		title: "Мы находимся тут!",
 		icon: '../images/marker.png'
 	});
+	var p1 = new google.maps.Polyline({
+	  path: [{lat:55.758894 ,lng: 37.620631 },
+			 {lat:55.759142 ,lng: 37.622149 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p2 = new google.maps.Polyline({
+	  path: [{lat:55.759305 ,lng: 37.623233 },
+			 {lat:55.759404 ,lng: 37.623893 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p3 = new google.maps.Polyline({
+	  path: [{lat:55.759305 ,lng: 37.623233 },
+			 {lat:55.759404 ,lng: 37.623893 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p3 = new google.maps.Polyline({
+	  path: [{lat:55.759371 ,lng: 37.625759 },
+			 {lat:55.758930 ,lng: 37.626462 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p4 = new google.maps.Polyline({
+	  path: [{lat:55.758550 ,lng: 37.627100 },
+		  	 {lat:55.758795 ,lng: 37.626671 },
+			 {lat:55.758447 ,lng: 37.625883 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p5 = new google.maps.Polyline({
+	  path: [{lat:55.758438 ,lng: 37.627295 },
+			 {lat:55.758344 ,lng: 37.627440 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p6 = new google.maps.Polyline({
+	  path: [{lat:55.758248 ,lng: 37.627571 },
+			 {lat:55.758159 ,lng: 37.627697 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p7 = new google.maps.Polyline({
+	  path: [{lat:55.759680 ,lng: 37.621336 },
+			 {lat:55.759383 ,lng: 37.621503 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p8 = new google.maps.Polyline({
+	  path: [{lat:55.759934 ,lng: 37.628924 },
+			 {lat:55.760137 ,lng: 37.630557 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p9 = new google.maps.Polyline({
+	  path: [{lat:55.756527 ,lng: 37.626896 },
+			 {lat:55.757502 ,lng: 37.625973 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p10 = new google.maps.Polyline({
+	  path: [{lat:55.758051 ,lng: 37.627829 },
+			 {lat:55.756846 ,lng: 37.629487 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p11 = new google.maps.Polyline({
+	  path: [{lat:55.760153 ,lng: 37.620865 },
+			 {lat:55.761073 ,lng: 37.620387 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	var p12 = new google.maps.Polyline({
+	  path: [{lat:55.760792 ,lng: 37.620757 },
+			 {lat:55.760197 ,lng: 37.621042 }],
+	  geodesic: true,
+	  strokeColor: '#fdd835',
+	  strokeOpacity: 0.8,
+	  strokeWeight: 4
+	});
+	p1.setMap(map);
+	p2.setMap(map);
+	p3.setMap(map);
+	p4.setMap(map);
+	p5.setMap(map);
+	p6.setMap(map);
+	p7.setMap(map);
+	p8.setMap(map);
+	p9.setMap(map);
+	p10.setMap(map);
+	p11.setMap(map);
+	p12.setMap(map);
 }
 //lazy load images
 !function(window){
