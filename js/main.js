@@ -72,9 +72,9 @@ $(document).ready(function () {
 		$('.s_reviews__left').find('li').eq(n).addClass('current').siblings().removeClass('current');
 	});
 	//custom scroll
-	$('._scroll').perfectScrollbar();
+	$('._scroll, .s_card__calendar').perfectScrollbar();
 	$(window).resize(function () {
-		$('._scroll').perfectScrollbar('update');
+		$('._scroll, .s_card__calendar').perfectScrollbar('update');
 	});
 	//closest slider
 	if ($('*').is('.s_closest__slider')) {
@@ -271,12 +271,12 @@ $(document).ready(function () {
 				pop.find('.s_once__choose label').last().hide();
 			}
 			pop.find('.popup__form_trial span').text(cont.find('h5').text());
+			pop.find('.popup__form_teacher2 span').html(cont.find('.h2').html());
 		}else if(name=='_trial'){
 			var text;
 			if($(this).closest('.s_card__trial_body').length){
 				text = $(this).closest('.s_card__trial_body').find('h3 span').text();
-				text =
-				$('.popup._trial').find('.btn b').text(text+' р.');
+				text = $('.popup._trial').find('.btn b').text(text+' р.');
 			} else{
 				$(this).prev().find('.css-checkbox').each(function(){
 					if($(this).prop('checked')){

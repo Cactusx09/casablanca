@@ -2756,6 +2756,7 @@ $dy: #ef9e1b;
 	}
 	&__calendar{
 		margin-bottom: 40px;
+		position: relative;
 		&_term,
 		&_dif{
 			border: 1px solid rgba(40, 29, 42, 0.22);
@@ -2901,6 +2902,7 @@ $dy: #ef9e1b;
 		}
 		&_tabbody{
 			overflow: hidden;
+			position: relative;
 		}
 		&_tabitem{
 			@extend ._flex_sb_fs;
@@ -3205,7 +3207,7 @@ $dy: #ef9e1b;
 				margin-bottom: 0;
 			}
 		}
-		&_trial{
+		&_trial,&_teacher2{
 			padding: 13px 0;
 			border-bottom: 1px solid #d6d6d6;
 			border-top: 1px solid #d6d6d6;
@@ -3224,6 +3226,13 @@ $dy: #ef9e1b;
 			.select-wrp{
 				flex-grow: 2;
 				margin-left: 30px;
+			}
+			&2{
+				margin-bottom: 15px;
+				margin-top: -1px;
+				span span{
+					display: none;
+				}
 			}
 		}
 		&_radio{
@@ -3450,6 +3459,24 @@ $dy: #ef9e1b;
 			right: 34%;
 		}
 	}
+	.back{
+		position: static;
+		height: auto;
+		flex-direction: row;
+		width: 100%;
+		padding-bottom: 20px;
+		padding-top: 20px;
+		align-items: center;
+		span{
+			margin-top: auto;
+			margin-bottom: auto;
+			font-size: 2em;
+		}
+		svg{
+			order: -1;
+			margin-right: 50px;
+		}
+	}
 }
 @media only screen and (max-width: 1625.5px) {
 	.header{
@@ -3577,6 +3604,38 @@ $dy: #ef9e1b;
 	.s_404__404{
 		font-size: 40em;
 	}
+	.s_thnx__right_img{
+		display: none;
+	}
+	.s_event{
+		._flex_sb_fs{
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		&__left{
+			margin-right: 0;
+			min-width: 100%;
+		}
+		&__right,&__right_willbe{
+			margin-bottom: 50px;
+
+		}
+	}
+	.s_card__left{
+		margin-right: 0;
+		min-width: 100%;
+		iframe{
+			width: 100%;
+		}
+	}
+	.s_card__body{
+		flex-wrap: wrap;
+		justify-content: center !important;
+	}
+	.s_card__right{
+		max-width: 650px;
+		margin-bottom: 50px;
+	}
 }
 @media only screen and (max-width: 1199.5px) {
 	.header__left{
@@ -3689,27 +3748,24 @@ $dy: #ef9e1b;
 	.s_404__404{
 		font-size: 27em;
 	}
-	.back{
-		position: static;
-		height: auto;
-		flex-direction: row;
-		width: 100%;
-		padding-bottom: 20px;
-		padding-top: 20px;
-		align-items: center;
-		span{
-			margin-top: auto;
-			margin-bottom: auto;
-			font-size: 2em;
-		}
-		svg{
-			order: -1;
-			margin-right: 50px;
-		}
-	}
 	.s_404__img{
 		max-width: 298px;
 		margin-top: -259px;
+	}
+	.s_thnx .container{
+		flex-wrap: wrap;
+		.s_thnx__left{
+			order: 2;
+		}
+	}
+	.s_thnx__right{
+		margin-bottom: 50px;
+	}
+	.s_thnx__left{
+		max-width: 100%;
+	}
+	.s_thnx__subscribe_wrp{
+		flex-wrap: wrap;
 	}
 }
 @media only screen and (max-width: 950.5px) {
@@ -3908,6 +3964,22 @@ $dy: #ef9e1b;
 	.s_404__404{
 		font-size: 18em;
 	}
+	.s_thnx__left{
+		margin-right: 0;
+	}
+	.s_thnx__subscribe_fb{
+		margin-left: 0;
+		margin-right: 30px;
+		margin-top: 50px;
+	}
+	.s_card{
+		.s_teachers__item_txt{
+			margin-left: 0;
+		}
+	}
+	.s_card__left>ul li{
+		max-width: 100%;
+	}
 }
 @media only screen and (max-width: 700.5px) {
 	.s_video__content_info{
@@ -3932,6 +4004,19 @@ $dy: #ef9e1b;
 	}
 	.footer__links{
 		max-width: 203px;
+	}
+	.s_card__blocks_row._form .g_input{
+		width: 100%;
+		&:first-of-type{
+			margin-bottom: 15px;
+		}
+	}
+	.s_card__blocks_row{
+		flex-wrap: wrap;
+	}
+	.s_card__blocks_col{
+		width: 100%;
+		min-width: 100% !important;
 	}
 }
 @media only screen and (max-height: 700.5px) {
@@ -4205,6 +4290,40 @@ $dy: #ef9e1b;
 		padding-left: 25px;
 		padding-right: 25px;
 	}
+	.s_thnx__right_head{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.s_thnx__right_body{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.s_card__who .s_teachers__item_img{
+		display: none;
+	}
+	.s_card .s_teachers__item_txt{
+		max-width: 100%;
+		min-width: 100%;
+	}
+	.s_teachers__item_txt p{
+		min-width: 100%;
+	}
+	.s_card__calendar_tabcol{
+		font-size: .9em;
+		padding-left: 0;
+		span{
+			padding-left: 2px;
+			padding-right: 2px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+	.s_card__trial_head,
+	.s_card__trial_body,
+	.s_card__blocks_row._form{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 }
 @media only screen and (max-width: 400.5px) {
 	body,html{
@@ -4265,6 +4384,45 @@ $dy: #ef9e1b;
 	}
 	.s_404__404{
 		font-size: 10em;
+	}
+	.s_thnx,.s_event,.s_card{
+		.container{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	.btn{
+		min-width: 100%;
+	}
+	.s_event__right_willbe h3,
+	.s_event__right_willbe_info{
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	.s_event__right_willbe form{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.s_card__calendar{
+		margin-right: -15px;
+	}
+	.s_card__calendar_dif,
+	.s_card__calendar_term,
+	.s_card__calendar_days,
+	.s_card__calendar_body{
+		min-width: 400px;
+	}
+	.s_card__calendar_tabcol{
+		span{
+			padding-left: 5px;
+			padding-right: 5px;
+			font-size: 1.2em;
+		}
+	}
+	.s_card__trial_body .btn{
+		padding-left: 10px;
+		padding-right: 10px;
+		text-align: center;
 	}
 }
 
