@@ -3152,6 +3152,20 @@ $dy: #ef9e1b;
 		max-width: 500px;
 		margin-left: -250px;
 		z-index: 999999;
+		&._card{
+			.popup__form_teacher2{
+				span{
+					color: $d;
+					&:first-of-type{
+						margin-right: 35px;
+					}
+					svg{
+						margin-right: 10px;
+						margin-top: -2px;
+					}
+				}
+			}
+		}
 	}
 	&._trial2{
 		.s_once__choose{

@@ -30,6 +30,13 @@ $(document).ready(function () {
 	if ($('*').is('.s_3d__gallery')) {
 		$('.s_3d__gallery').waterfall();
 	}
+	//card popup
+	$('.s_card__calendar_tabcol span').click(function(){
+		$('.popup._teacher, .overlay').addClass('visible');
+		var px = window.pageYOffset;
+		$('.popup').css('top',px+'px');
+		$('.popup__form_teacher2 span').last().find('small').text($(this).text());
+	});
 	//teachers slider
 	var sl_teachers, sl_teachers2, sl_teachers_n = 3;
 	if ($('*').is('.s_teachers__slider_wrp')) {
