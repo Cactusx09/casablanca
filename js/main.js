@@ -1,10 +1,12 @@
 $(document).ready(function () {
-	if(window.matchMedia('(min-width: 700px)').matches){
-		window.onload = function(){
-			preloader.className = 'done';
-		};
-	}else{
-		preloader.remove();
+	if ($('*').is('#preloader')){
+		if(window.matchMedia('(min-width: 700px)').matches){
+			window.onload = function(){
+				preloader.className = 'done';
+			};
+		}else{
+			preloader.remove();
+		}
 	}
 	//first screen bg slider
 	if ($('*').is('.s_first') && window.matchMedia('(min-width: 700px)').matches){
@@ -26,6 +28,17 @@ $(document).ready(function () {
 			delay: 12000
 		});
 	}
+	//mobile fix for card page
+	if(window.matchMedia('(max-width: 1470.5px)').matches){
+		$('.s_card__right').insertAfter('.s_card__left_more');
+	}
+	$(window).resize(function(){
+		if(window.matchMedia('(max-width: 1470.5px)').matches){
+			$('.s_card__right').insertAfter('.s_card__left_more');
+		}else{
+			$('.s_card__right').insertAfter('.s_card__left');
+		}
+	});
 	//gallery blocks
 	if ($('*').is('.s_3d__gallery')) {
 		$('.s_3d__gallery').waterfall();
@@ -454,7 +467,7 @@ $(document).ready(function () {
 	if($('*').is('.s_price')){
 		$(window).scroll(function(){
 			var elPosition = $('.s_price').offset();
-			if ($(window).scrollTop() > elPosition.top-500 && $(window).scrollTop()< elPosition.top + $('.s_price').height()-400) {
+			if ($(window).scrollTop() > elPosition.top-700 && $(window).scrollTop()< elPosition.top + $('.s_price').height()-100) {
 				$('.price').addClass('visible');
 			} else{
 				$('.price').removeClass('visible');
