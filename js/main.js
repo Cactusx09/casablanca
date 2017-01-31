@@ -450,6 +450,17 @@ $(document).ready(function () {
 	$('.s_first__close').click(function(){
 		$('.s_first__nav').removeClass('active');
 	});
+	//price
+	if($('*').is('.s_price')){
+		$(window).scroll(function(){
+			var elPosition = $('.s_price').offset();
+			if ($(window).scrollTop() > elPosition.top-500 && $(window).scrollTop()< elPosition.top + $('.s_price').height()-400) {
+				$('.price').addClass('visible');
+			} else{
+				$('.price').removeClass('visible');
+			}
+		});
+	}
 });
 //gmap init
 function mapInitialize(el_id) {
