@@ -464,7 +464,7 @@ $(document).ready(function () {
 		$('.s_first__nav').removeClass('active');
 	});
 	//price
-	if($('*').is('.s_price')){
+	if($('*').is('.s_price') && window.matchMedia('(min-width: 700px)').matches){
 		$(window).scroll(function(){
 			var elPosition = $('.s_price').offset();
 			if ($(window).scrollTop() > elPosition.top-700 && $(window).scrollTop()< elPosition.top + $('.s_price').height()-100) {
