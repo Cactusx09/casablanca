@@ -3146,7 +3146,6 @@ $dy: #ef9e1b;
 		max-width: 1460px;
 		margin-left: -730px;
 		padding: 35px 0 0;
-		max-height: 75vh;
 		@extend ._flex_fs_fe;
 		ul{
 			margin-bottom: 0;
@@ -3180,6 +3179,9 @@ $dy: #ef9e1b;
 				}
 			}
 		}
+		.s_teachers__slider2{
+			height: auto;
+		}
 		.s_teachers__item2{
 			width: 100%;
 			max-width: 100%;
@@ -3193,9 +3195,9 @@ $dy: #ef9e1b;
 				padding: 20px 50px;
 				position: relative;
 				max-width: none;
-				max-height: 60vh;
 				margin-bottom: auto;
 				flex-grow: 2;
+				max-height: none;
 				p{
 					width: 100%;
 					font-style: normal;
@@ -3204,10 +3206,12 @@ $dy: #ef9e1b;
 				}
 				.btn{
 					margin-top: 10px;
+					margin-bottom: 35px;
 				}
 			}
 			.s_teachers__item_img{
 				min-width: 450px;
+				max-width: 450px;
 			}
 		}
 	}
