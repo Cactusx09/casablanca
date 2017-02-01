@@ -258,6 +258,14 @@ $(document).ready(function () {
 	$('.overlay, .close_pop').click(function(){
 		$('.popup, .overlay').removeClass('visible');
 	});
+	$('.s_card__blocks_block p a').click(function(e){
+		e.preventDefault();
+		$('.popup._trial, .overlay').addClass('visible');
+		var px = window.pageYOffset;
+		$('.popup').css('top',px+'px');
+		text = $('.s_card__trial_body').find('h3 span').text();
+		$('.popup._trial').find('.btn b').text(text+' р.');
+	});
 	//popups
 	$('._open_pop').click(function(e){
 		e.preventDefault();
