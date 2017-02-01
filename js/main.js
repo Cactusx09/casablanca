@@ -315,6 +315,14 @@ $(document).ready(function () {
 			popup.find('h5').text(btn.prev('h5').text());
 			popup.find('h2').text(btn.prevAll('h3').text());
 			popup.find('h4').html(btn.prevAll('h4').html());
+		}else if(name=='_special'){
+			var popup = $('.popup._special');
+			var special = $('.s_price__special');
+			popup.find('h3').text(special.find('h3').text());
+			popup.find('.popup__form_trial span')
+				.text(special.find('.s_price__special_term').text());
+			popup.find('.popup__form_teacher2 span')
+				.html(special.find('.s_price__special_price').html());
 		}
 		var px = window.pageYOffset;
 		$('.popup').css('top',px+'px');

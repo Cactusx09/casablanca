@@ -3274,6 +3274,22 @@ $dy: #ef9e1b;
 			margin-bottom: 40px;
 		}
 	}
+	&._special{
+		.popup__form_teacher2,
+		.popup__form_trial{
+			span{
+				margin-left: 10px;
+			}
+		}
+		.popup__form_teacher2{
+			small{
+				color: $d;
+				font-size: .8em;
+				text-decoration: line-through;
+				margin-right: 10px;
+			}
+		}
+	}
 	&__form{
 		margin-top: 20px;
 		.g_input{
@@ -3559,12 +3575,51 @@ $dy: #ef9e1b;
 	.h2{
 		margin-bottom: 15px;
 	}
+	a{
+		color: $y;
+		display: inline-block;
+		margin-top: 10px;
+		float: right;
+		font-size: 1.1em;
+		cursor: pointer;
+		position: relative;
+		transition: $t;
+		&:before{
+			content: '';
+			position: absolute;
+			width: 0;
+			bottom: 0;
+			right: 0;
+			transition: $t;
+			opacity: 0;
+			border-bottom: 1px solid $y;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			width: 0;
+			bottom: 2px;
+			right: 0;
+			transition: $t;
+			opacity: 0;
+			border-bottom: 1px solid $dy;
+		}
+		&:hover{
+			color: #fff;
+			&:before,&:after{
+				transform:  none;
+				width: 100%;
+				opacity: 1;
+			}
+		}
+	}
 	&.visible{
 		box-shadow:
 		0 0 10px 0px rgba($d,.7),
 		inset 0 0 0 0 $y,
 		inset 0 0 0 0 rgba($d,.7),
 		inset 0 0 0 0 $dy;
+		pointer-events: all;
 	}
 }
 
