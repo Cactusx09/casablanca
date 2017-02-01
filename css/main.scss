@@ -186,7 +186,7 @@ $dy: #ef9e1b;
 	box-shadow:
 			inset 0 0 0 0 $y,
 			inset 0 0 0 0 rgba($d,.7),
-			inset 0 0 0 0 $dy;
+			inset 0 0 0 0 $y;
 	img{
 		margin-left: 20px;
 		margin-top: -3px;
@@ -206,7 +206,7 @@ $dy: #ef9e1b;
 		box-shadow:
 			inset 0 0 0 2px $y,
 			inset 0 0 2px 2px rgba($d,.7),
-			inset 0 0 0 6px $dy,
+			inset 0 0 0 6px $y,
 			0 5px 8px rgba(119, 104, 38, 0.51);
 		color: #fff;
 		background-color: $d;
@@ -261,8 +261,8 @@ $dy: #ef9e1b;
 	&:hover{
 		box-shadow:
 			inset 0 0 0 3px $y,
-			inset 0 0 2px 3px rgba($d,.7),
-			inset 0 0 0 6px $dy,
+			inset 0 0 3px 3px rgba($d,0.8),
+			inset 0 0 0 6px $y,
 			0 5px 8px rgba(119, 104, 38, 0);
 		color: #fff;
 		background-color: $d;
@@ -306,7 +306,7 @@ $dy: #ef9e1b;
 		box-shadow:
 			inset 0 0 0 3px $y,
 			inset 0 0 2px 3px rgba($d,.7),
-			inset 0 0 0 7px $dy;
+			inset 0 0 0 7px $y;
 		border-color: $y;
 		path{
 			fill: #fff;
@@ -432,7 +432,7 @@ $dy: #ef9e1b;
 		box-shadow:
 			inset 0 0 0 0 $y,
 			inset 0 0 0 0 rgba($d,.7),
-			inset 0 0 0 0 $dy;
+			inset 0 0 0 0 $y;
 		path{
 			transition: $t;
 		}
@@ -444,7 +444,7 @@ $dy: #ef9e1b;
 			box-shadow:
 			inset 0 0 0 2px $y,
 			inset 0 0 2px 2px rgba($d,.7),
-			inset 0 0 0 5px $dy;
+			inset 0 0 0 5px $y;
 			color: #fff;
 			background-color: $d;
 			path{
@@ -527,8 +527,8 @@ $dy: #ef9e1b;
 				background-color: #1d1d1d;
 				box-shadow:
 				inset 0 0 0 2px $y,
-				inset 0 0 2px 2px rgba($d,.7),
-				inset 0 0 0 6px $dy;
+				inset 0 0 3px 2px rgba($d,0.9),
+				inset 0 0 0 5px $y;
 				color: #fff;
 				background-color: $d;
 				path{
@@ -599,7 +599,7 @@ $dy: #ef9e1b;
 				box-shadow:
 				inset 0 0 0 2px $y,
 				inset 0 0 2px 2px rgba($d,.7),
-				inset 0 0 0 5px $dy;
+				inset 0 0 0 5px $y;
 				color: #fff;
 				background-color: $d;
 				path{
@@ -998,13 +998,13 @@ $dy: #ef9e1b;
 			box-shadow:
 			inset 0 0 0 0 $y,
 			inset 0 0 0 0 rgba($d,.7),
-			inset 0 0 0 0 $dy;
+			inset 0 0 0 0 $y;
 			transition: left 500ms ease-in-out, top 500ms ease-in-out, opacity 500ms ease-in-out, box-shadow $t !important;
 			&:hover{
 				box-shadow:
-					inset 0 0 0 5px $y,
-					inset 0 0 2px 5px rgba($d,.7),
-					inset 0 0 0 9px $dy;
+					inset 0 0 0 3px $y,
+					inset 0 0 4px 3px rgba($d,.7),
+					inset 0 0 0 9px $y;
 				path{
 					fill: #fff;
 				}
@@ -1406,7 +1406,7 @@ $dy: #ef9e1b;
 				box-shadow:
 					inset 0 0 0 3px $y,
 					inset 0 0 2px 3px rgba($d,.7),
-					inset 0 0 0 7px $dy;
+					inset 0 0 0 7px $y;
 				border-color: $y;
 				path{
 					fill: #fff;
@@ -1649,16 +1649,16 @@ $dy: #ef9e1b;
 			box-shadow:
 				inset 0 0 0 0 $y,
 				inset 0 0 0 0 rgba($d,.7),
-				inset 0 0 0 0 $dy,
+				inset 0 0 0 0 $y,
 				0px 0px 8px 0px rgba(27, 7, 25, 0.19);
 			>div:last-of-type{
 				transition: $t/2;
 			}
 			&:hover{
 				box-shadow:
-				inset 0 0 0 4px $y,
-				inset 0 0 2px 4px rgba($d,.7),
-				inset 0 0 0 8px $dy;
+				inset 0 0 0 3px $y,
+				inset 0 0 3px 3px rgba($d,.7),
+				inset 0 0 0 8px $y;
 				>div:last-of-type{
 					transform: translateZ(0)  scale(.95) translateX(-6px);
 				}
@@ -1778,8 +1778,8 @@ $dy: #ef9e1b;
 				&:hover{
 					box-shadow:
 						inset 0 0 0 2px $y,
-						inset 0 0 2px 2px rgba($d,.7),
-						inset 0 0 0 6px $dy,
+						inset 0 0 3px 2px rgba($d,0.8),
+						inset 0 0 0 5px $y,
 						0 5px 13px rgba(204, 158, 33, 0.64);
 					color: #fff;
 				}
@@ -3379,8 +3379,8 @@ $dy: #ef9e1b;
 		&:hover{
 			box-shadow:
 			inset 0 0 0 2px $y,
-			inset 0 0 2px 2px rgba($d,.7),
-			inset 0 0 0 6px $dy;
+			inset 0 0 6px 3px rgba($d,0.7),
+			inset 0 0 0 6px $y;
 			color: #fff;
 			background-color: $d;
 			border-color: $y;
