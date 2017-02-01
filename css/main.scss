@@ -2977,6 +2977,11 @@ $dy: #ef9e1b;
 		&_tabbody{
 			overflow: hidden;
 			position: relative;
+			display: none !important;
+			&.current{
+				display: block !important;
+				animation: tab_top $t;
+			}
 		}
 		&_tabitem{
 			@extend ._flex_sb_fs;

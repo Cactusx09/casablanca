@@ -298,9 +298,9 @@ $(document).ready(function () {
 			pop.find('.popup__form_teacher2 span').html(cont.find('.h2').html());
 		}else if(name=='_trial'){
 			var text;
-			if($(this).closest('.s_card__trial_body').length){
-				text = $(this).closest('.s_card__trial_body').find('h3 span').text();
-				text = $('.popup._trial').find('.btn b').text(text+' р.');
+			if($(this).closest('.s_card__body').length){
+				text = $('.s_card__trial_body').find('h3 span').text();
+				$('.popup._trial').find('.btn b').text(text+' р.');
 			} else{
 				$(this).prev().find('.css-checkbox').each(function(){
 					if($(this).prop('checked')){
@@ -438,7 +438,11 @@ $(document).ready(function () {
 	}
 	//card page dif
 	$('.s_card__calendar_dif span').click(function(){
+		var n = $(this).index();
 		$(this).addClass('current').siblings().removeClass('current');
+		$('.s_card__calendar_tabbody').eq(n).addClass('current').siblings().removeClass('current');
+		$('.s_card__calendar_time span, .s_card__calendar_tabitem').first()
+			.addClass('current').siblings().removeClass('current');
 	});
 	//card slider teachers
 	if($('*').is('.s_card__who_slider')){
@@ -457,7 +461,9 @@ $(document).ready(function () {
 	}
 	//card page day time filter
 	$('.s_card__calendar_time span').click(function(){
-		$('.s_card__calendar_tabitem').eq($(this).index()).addClass('current').siblings().removeClass('current');
+		$('.s_card__calendar_tabbody.current').find('.s_card__calendar_tabitem')
+			.eq($(this).index())
+			.addClass('current').siblings().removeClass('current');
 		$(this).addClass('current').siblings().removeClass('current');
 	});
 	//choose abonement in popup trigger
