@@ -1,13 +1,4 @@
 $(document).ready(function () {
-	if ($('*').is('#preloader')){
-		if(window.matchMedia('(min-width: 700px)').matches){
-			window.onload = function(){
-				preloader.className = 'done';
-			};
-		}else{
-			preloader.remove();
-		}
-	}
 	//first screen bg slider
 	if ($('*').is('.s_first') && window.matchMedia('(min-width: 700px)').matches){
 		var bg_slider = $(".s_first");
