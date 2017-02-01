@@ -274,10 +274,15 @@ $(document).ready(function () {
             $(this)[0].reset();
         });
 		var name = $(this).data('name');
-		$('.overlay, .popup.'+name).addClass('visible');
 		setTimeout(function() {
             $('.popup').find('input').eq(0).focus();
         }, 1000);
+		if(name=='_abonement'){
+			var n = $(this).closest('.s_price__item').index()+1;
+			$('.overlay, #ab'+n).addClass('visible');
+		}else{
+			$('.overlay, .popup.'+name).addClass('visible');
+		}
 		if(name=='_call'){
 			mapInitialize('popup_map');
 		}else if(name=='_about'){

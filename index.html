@@ -1669,6 +1669,616 @@
 			<button type="submit" href="#" class="btn"><span>Оставить заявку</span></button>
 		</form>
 	</div>
+	<div class="popup _abonement">
+		<div class="close_pop"><span>&times;</span></div>
+		<h3>Заголовок окна</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		<form action="/" class="popup__form">
+			<div class="popup__form_teacher">
+				<p>Тип абонемента</p>
+				<div class="select-wrp popup_select">
+					 <select data-placeholder="Одно направление" name="type" hidden>
+						 <option value="Одно направление">Одно направление</option>
+						 <option value="Два направления">Два направления</option>
+						 <option value="Exclusive">Exclusive</option>
+					 </select>
+				</div>
+			</div>
+			<div class="s_price__item_thead">
+				<div class="s_price__item_col">Кол-во занятий</div>
+				<div class="s_price__item_col">Цена 1 занятия</div>
+				<div class="s_price__item_col">Срок действ.</div>
+				<div class="s_price__item_col">Цена</div>
+				<div class="s_price__item_col">
+					<input type="radio" name="chhidden" id="chhidden" class="css-checkbox"/>
+					<label for="chhidden" class="css-label chhidden"></label>
+				</div>
+			</div>
+			<div class="popup__table">
+				<div class="popup__table_item current">
+					<h5>Одно направление</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">8 <span>(в мес)</span></div>
+						<div class="s_price__item_col">625 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">5 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup1" class="css-checkbox" checked/>
+							<label for="typeGroup1" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">466 р.</div>
+						<div class="s_price__item_col">60+10</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup2" class="css-checkbox"/>
+							<label for="typeGroup2" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">360 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">9 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup3" class="css-checkbox"/>
+							<label for="typeGroup3" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5>Два направления</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">566 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">8 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup4" class="css-checkbox"/>
+							<label for="typeGroup4" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">420 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">10 500 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup5" class="css-checkbox"/>
+							<label for="typeGroup5" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5 class="_exclusive">Аргентинское танго и Антигравитация <span>exclusive</span></h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">10 <span>(в мес)</span></div>
+						<div class="s_price__item_col">700 р.</div>
+						<div class="s_price__item_col">50</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup6" class="css-checkbox"/>
+							<label for="typeGroup6" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">520 р.</div>
+						<div class="s_price__item_col">100</div>
+						<div class="s_price__item_col">13 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup7" class="css-checkbox"/>
+							<label for="typeGroup7" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="text" class="g_input" name="name" placeholder="Ваше имя">
+			<input type="email" class="g_input" name="mail" placeholder="Ваш e-mail">
+			<input type="text" class="g_input" name="phone" placeholder="Номер телефона">
+			<div class="popup__form_radio">
+				<input type="radio" name="pay" id="radio225" class="css-checkbox"/>
+				<label for="radio225" class="css-label radGroup37g">Оплатить на месте</label>
+				<input type="radio" name="pay" id="radio226" class="css-checkbox" checked/>
+				<label for="radio226" class="css-label radGroup37g">Оплатить онлайн</label>
+			</div>
+			<div class="popup__form_oferta">
+				<input type="checkbox" name="checkboxG2" id="checkboxG3" class="css-checkbox" checked="checked" />
+				<label for="checkboxG3" class="css-check_label"><span>Выражаю согласие с политикой конфедициальности и публичной офертой</span></label>
+			</div>
+			<button type="submit" href="#" class="btn"><span>Оставить заявку</span></button>
+		</form>
+	</div>
+	<div class="popup _abonement" id="ab1">
+		<div class="close_pop"><span>&times;</span></div>
+		<h3>Заголовок окна 1</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		<form action="/" class="popup__form">
+			<div class="popup__form_teacher">
+				<p>Тип абонемента</p>
+				<div class="select-wrp popup_select">
+					 <select data-placeholder="Одно направление" name="type" hidden>
+						 <option value="Одно направление">Одно направление</option>
+						 <option value="Два направления">Два направления</option>
+						 <option value="Exclusive">Exclusive</option>
+					 </select>
+				</div>
+			</div>
+			<div class="s_price__item_thead">
+				<div class="s_price__item_col">Кол-во занятий</div>
+				<div class="s_price__item_col">Цена 1 занятия</div>
+				<div class="s_price__item_col">Срок действ.</div>
+				<div class="s_price__item_col">Цена</div>
+				<div class="s_price__item_col">
+					<input type="radio" name="chhidden" id="chhidden" class="css-checkbox"/>
+					<label for="chhidden" class="css-label chhidden"></label>
+				</div>
+			</div>
+			<div class="popup__table">
+				<div class="popup__table_item current">
+					<h5>Одно направление</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">8 <span>(в мес)</span></div>
+						<div class="s_price__item_col">625 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">5 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup1" class="css-checkbox" checked/>
+							<label for="typeGroup1" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">466 р.</div>
+						<div class="s_price__item_col">60+10</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup2" class="css-checkbox"/>
+							<label for="typeGroup2" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">360 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">9 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup3" class="css-checkbox"/>
+							<label for="typeGroup3" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5>Два направления</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">566 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">8 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup4" class="css-checkbox"/>
+							<label for="typeGroup4" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">420 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">10 500 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup5" class="css-checkbox"/>
+							<label for="typeGroup5" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5 class="_exclusive">Аргентинское танго и Антигравитация <span>exclusive</span></h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">10 <span>(в мес)</span></div>
+						<div class="s_price__item_col">700 р.</div>
+						<div class="s_price__item_col">50</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup6" class="css-checkbox"/>
+							<label for="typeGroup6" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">520 р.</div>
+						<div class="s_price__item_col">100</div>
+						<div class="s_price__item_col">13 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup7" class="css-checkbox"/>
+							<label for="typeGroup7" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="text" class="g_input" name="name" placeholder="Ваше имя">
+			<input type="email" class="g_input" name="mail" placeholder="Ваш e-mail">
+			<input type="text" class="g_input" name="phone" placeholder="Номер телефона">
+			<div class="popup__form_radio">
+				<input type="radio" name="pay" id="radio225" class="css-checkbox"/>
+				<label for="radio225" class="css-label radGroup37g">Оплатить на месте</label>
+				<input type="radio" name="pay" id="radio226" class="css-checkbox" checked/>
+				<label for="radio226" class="css-label radGroup37g">Оплатить онлайн</label>
+			</div>
+			<div class="popup__form_oferta">
+				<input type="checkbox" name="checkboxG2" id="checkboxG3" class="css-checkbox" checked="checked" />
+				<label for="checkboxG3" class="css-check_label"><span>Выражаю согласие с политикой конфедициальности и публичной офертой</span></label>
+			</div>
+			<button type="submit" href="#" class="btn"><span>Оставить заявку</span></button>
+		</form>
+	</div>
+	<div class="popup _abonement" id="ab2">
+		<div class="close_pop"><span>&times;</span></div>
+		<h3>Заголовок окна 2</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		<form action="/" class="popup__form">
+			<div class="popup__form_teacher">
+				<p>Тип абонемента</p>
+				<div class="select-wrp popup_select">
+					 <select data-placeholder="Одно направление" name="type" hidden>
+						 <option value="Одно направление">Одно направление</option>
+						 <option value="Два направления">Два направления</option>
+						 <option value="Exclusive">Exclusive</option>
+					 </select>
+				</div>
+			</div>
+			<div class="s_price__item_thead">
+				<div class="s_price__item_col">Кол-во занятий</div>
+				<div class="s_price__item_col">Цена 1 занятия</div>
+				<div class="s_price__item_col">Срок действ.</div>
+				<div class="s_price__item_col">Цена</div>
+				<div class="s_price__item_col">
+					<input type="radio" name="chhidden" id="chhidden" class="css-checkbox"/>
+					<label for="chhidden" class="css-label chhidden"></label>
+				</div>
+			</div>
+			<div class="popup__table">
+				<div class="popup__table_item current">
+					<h5>Одно направление</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">8 <span>(в мес)</span></div>
+						<div class="s_price__item_col">625 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">5 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup1" class="css-checkbox" checked/>
+							<label for="typeGroup1" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">466 р.</div>
+						<div class="s_price__item_col">60+10</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup2" class="css-checkbox"/>
+							<label for="typeGroup2" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">360 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">9 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup3" class="css-checkbox"/>
+							<label for="typeGroup3" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5>Два направления</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">566 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">8 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup4" class="css-checkbox"/>
+							<label for="typeGroup4" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">420 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">10 500 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup5" class="css-checkbox"/>
+							<label for="typeGroup5" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5 class="_exclusive">Аргентинское танго и Антигравитация <span>exclusive</span></h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">10 <span>(в мес)</span></div>
+						<div class="s_price__item_col">700 р.</div>
+						<div class="s_price__item_col">50</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup6" class="css-checkbox"/>
+							<label for="typeGroup6" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">520 р.</div>
+						<div class="s_price__item_col">100</div>
+						<div class="s_price__item_col">13 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup7" class="css-checkbox"/>
+							<label for="typeGroup7" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="text" class="g_input" name="name" placeholder="Ваше имя">
+			<input type="email" class="g_input" name="mail" placeholder="Ваш e-mail">
+			<input type="text" class="g_input" name="phone" placeholder="Номер телефона">
+			<div class="popup__form_radio">
+				<input type="radio" name="pay" id="radio225" class="css-checkbox"/>
+				<label for="radio225" class="css-label radGroup37g">Оплатить на месте</label>
+				<input type="radio" name="pay" id="radio226" class="css-checkbox" checked/>
+				<label for="radio226" class="css-label radGroup37g">Оплатить онлайн</label>
+			</div>
+			<div class="popup__form_oferta">
+				<input type="checkbox" name="checkboxG2" id="checkboxG3" class="css-checkbox" checked="checked" />
+				<label for="checkboxG3" class="css-check_label"><span>Выражаю согласие с политикой конфедициальности и публичной офертой</span></label>
+			</div>
+			<button type="submit" href="#" class="btn"><span>Оставить заявку</span></button>
+		</form>
+	</div>
+	<div class="popup _abonement" id="ab3">
+		<div class="close_pop"><span>&times;</span></div>
+		<h3>Заголовок окна 3</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		<form action="/" class="popup__form">
+			<div class="popup__form_teacher">
+				<p>Тип абонемента</p>
+				<div class="select-wrp popup_select">
+					 <select data-placeholder="Одно направление" name="type" hidden>
+						 <option value="Одно направление">Одно направление</option>
+						 <option value="Два направления">Два направления</option>
+						 <option value="Exclusive">Exclusive</option>
+					 </select>
+				</div>
+			</div>
+			<div class="s_price__item_thead">
+				<div class="s_price__item_col">Кол-во занятий</div>
+				<div class="s_price__item_col">Цена 1 занятия</div>
+				<div class="s_price__item_col">Срок действ.</div>
+				<div class="s_price__item_col">Цена</div>
+				<div class="s_price__item_col">
+					<input type="radio" name="chhidden" id="chhidden" class="css-checkbox"/>
+					<label for="chhidden" class="css-label chhidden"></label>
+				</div>
+			</div>
+			<div class="popup__table">
+				<div class="popup__table_item current">
+					<h5>Одно направление</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">8 <span>(в мес)</span></div>
+						<div class="s_price__item_col">625 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">5 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup1" class="css-checkbox" checked/>
+							<label for="typeGroup1" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">466 р.</div>
+						<div class="s_price__item_col">60+10</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup2" class="css-checkbox"/>
+							<label for="typeGroup2" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">360 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">9 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup3" class="css-checkbox"/>
+							<label for="typeGroup3" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5>Два направления</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">566 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">8 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup4" class="css-checkbox"/>
+							<label for="typeGroup4" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">420 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">10 500 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup5" class="css-checkbox"/>
+							<label for="typeGroup5" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5 class="_exclusive">Аргентинское танго и Антигравитация <span>exclusive</span></h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">10 <span>(в мес)</span></div>
+						<div class="s_price__item_col">700 р.</div>
+						<div class="s_price__item_col">50</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup6" class="css-checkbox"/>
+							<label for="typeGroup6" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">520 р.</div>
+						<div class="s_price__item_col">100</div>
+						<div class="s_price__item_col">13 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup7" class="css-checkbox"/>
+							<label for="typeGroup7" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="text" class="g_input" name="name" placeholder="Ваше имя">
+			<input type="email" class="g_input" name="mail" placeholder="Ваш e-mail">
+			<input type="text" class="g_input" name="phone" placeholder="Номер телефона">
+			<div class="popup__form_radio">
+				<input type="radio" name="pay" id="radio225" class="css-checkbox"/>
+				<label for="radio225" class="css-label radGroup37g">Оплатить на месте</label>
+				<input type="radio" name="pay" id="radio226" class="css-checkbox" checked/>
+				<label for="radio226" class="css-label radGroup37g">Оплатить онлайн</label>
+			</div>
+			<div class="popup__form_oferta">
+				<input type="checkbox" name="checkboxG2" id="checkboxG3" class="css-checkbox" checked="checked" />
+				<label for="checkboxG3" class="css-check_label"><span>Выражаю согласие с политикой конфедициальности и публичной офертой</span></label>
+			</div>
+			<button type="submit" href="#" class="btn"><span>Оставить заявку</span></button>
+		</form>
+	</div>
+	<div class="popup _abonement" id="ab4">
+		<div class="close_pop"><span>&times;</span></div>
+		<h3>Заголовок окна 4</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		<form action="/" class="popup__form">
+			<div class="popup__form_teacher">
+				<p>Тип абонемента</p>
+				<div class="select-wrp popup_select">
+					 <select data-placeholder="Одно направление" name="type" hidden>
+						 <option value="Одно направление">Одно направление</option>
+						 <option value="Два направления">Два направления</option>
+						 <option value="Exclusive">Exclusive</option>
+					 </select>
+				</div>
+			</div>
+			<div class="s_price__item_thead">
+				<div class="s_price__item_col">Кол-во занятий</div>
+				<div class="s_price__item_col">Цена 1 занятия</div>
+				<div class="s_price__item_col">Срок действ.</div>
+				<div class="s_price__item_col">Цена</div>
+				<div class="s_price__item_col">
+					<input type="radio" name="chhidden" id="chhidden" class="css-checkbox"/>
+					<label for="chhidden" class="css-label chhidden"></label>
+				</div>
+			</div>
+			<div class="popup__table">
+				<div class="popup__table_item current">
+					<h5>Одно направление</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">8 <span>(в мес)</span></div>
+						<div class="s_price__item_col">625 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">5 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup1" class="css-checkbox" checked/>
+							<label for="typeGroup1" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">466 р.</div>
+						<div class="s_price__item_col">60+10</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup2" class="css-checkbox"/>
+							<label for="typeGroup2" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">360 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">9 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup3" class="css-checkbox"/>
+							<label for="typeGroup3" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5>Два направления</h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">15 <span>(в мес)</span></div>
+						<div class="s_price__item_col">566 р.</div>
+						<div class="s_price__item_col">30+10</div>
+						<div class="s_price__item_col">8 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup4" class="css-checkbox"/>
+							<label for="typeGroup4" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">420 р.</div>
+						<div class="s_price__item_col">90+10</div>
+						<div class="s_price__item_col">10 500 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup5" class="css-checkbox"/>
+							<label for="typeGroup5" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+				<div class="popup__table_item">
+					<h5 class="_exclusive">Аргентинское танго и Антигравитация <span>exclusive</span></h5>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">10 <span>(в мес)</span></div>
+						<div class="s_price__item_col">700 р.</div>
+						<div class="s_price__item_col">50</div>
+						<div class="s_price__item_col">7 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup6" class="css-checkbox"/>
+							<label for="typeGroup6" class="css-label typeGroup"></label>
+						</div>
+					</div>
+					<div class="s_price__item_trow">
+						<div class="s_price__item_col">25 <span>(в мес)</span></div>
+						<div class="s_price__item_col">520 р.</div>
+						<div class="s_price__item_col">100</div>
+						<div class="s_price__item_col">13 000 р.</div>
+						<div class="s_price__item_col">
+							<input type="radio" name="typeGroup" id="typeGroup7" class="css-checkbox"/>
+							<label for="typeGroup7" class="css-label typeGroup"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="text" class="g_input" name="name" placeholder="Ваше имя">
+			<input type="email" class="g_input" name="mail" placeholder="Ваш e-mail">
+			<input type="text" class="g_input" name="phone" placeholder="Номер телефона">
+			<div class="popup__form_radio">
+				<input type="radio" name="pay" id="radio225" class="css-checkbox"/>
+				<label for="radio225" class="css-label radGroup37g">Оплатить на месте</label>
+				<input type="radio" name="pay" id="radio226" class="css-checkbox" checked/>
+				<label for="radio226" class="css-label radGroup37g">Оплатить онлайн</label>
+			</div>
+			<div class="popup__form_oferta">
+				<input type="checkbox" name="checkboxG2" id="checkboxG3" class="css-checkbox" checked="checked" />
+				<label for="checkboxG3" class="css-check_label"><span>Выражаю согласие с политикой конфедициальности и публичной офертой</span></label>
+			</div>
+			<button type="submit" href="#" class="btn"><span>Оставить заявку</span></button>
+		</form>
+	</div>
 	<div class="popup _teacher">
 		<div class="close_pop"><span>&times;</span></div>
 		<h3>Заголовок окна</h3>
