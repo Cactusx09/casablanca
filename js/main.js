@@ -283,6 +283,11 @@ $(document).ready(function () {
 			$('.overlay, .popup.'+name).addClass('visible');
 		}
 		if(name=='_call'){
+			if(window.pageYOffset > $('.s_contacts').offset().top-500){
+				$('#popup_map').hide();
+			}else{
+				$('#popup_map').show();
+			}
 			mapInitialize('popup_map');
 		}else if(name=='_about'){
 			sl_teachers2.activate(sl_teachers_n);
@@ -323,10 +328,8 @@ $(document).ready(function () {
 			var popup = $('.popup._special');
 			var special = $('.s_price__special');
 			popup.find('h3').text(special.find('h3').text());
-			popup.find('.popup__form_trial span')
-				.text(special.find('.s_price__special_term').text());
-			popup.find('.popup__form_teacher2 span')
-				.html(special.find('.s_price__special_price').html());
+			popup.find('.popup__form_trial span').text(special.find('.s_price__special_term').text());
+			popup.find('.popup__form_teacher2 span').html(special.find('.s_price__special_price').html());
 		}
 		var px = window.pageYOffset;
 		$('.popup').css('top',px+'px');
