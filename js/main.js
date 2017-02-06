@@ -471,6 +471,8 @@ $(document).ready(function () {
 				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('consult');");
 			}else if($(this).closest('.s_contacts__block').length){
 				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('zakazzvonkamap');");
+			}else if($(this).closest('.s_once')){
+				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('probnoe4');");
 			}
 			if(window.pageYOffset > $('.s_contacts').offset().top-500){
 				$('#popup_map').hide();
