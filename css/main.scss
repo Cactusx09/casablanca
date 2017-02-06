@@ -366,12 +366,13 @@ $dy: #ef9e1b;
 	}
 	&__logo{
 		transition: $t;
+		flex: 1 0 auto;
 		&:hover{
 			transform: translateZ(0)  scale(.95);
 		}
 	}
 	&__left{
-		flex:1;
+		flex: 1 0 auto;
 		p{
 			margin-bottom: 5px;
 		}
@@ -402,7 +403,7 @@ $dy: #ef9e1b;
 		}
 	}
 	&__right{
-		flex:1;
+		flex: 1 0 auto;
 		text-align: right;
 		@extend ._flex_fe_fs;
 		>div{
@@ -4482,10 +4483,30 @@ $dy: #ef9e1b;
 			color: transparent;
 		}
 	}
+	.s_enough__content{
+		padding: 15px 0 40px;
+	}
+	.s_first__nav_phone a{
+		font-size: 1.3em;
+	}
+	.popup__form_teacher{
+		flex-wrap: wrap;
+		justify-content: flex-start !important;
+		>*{
+			flex: 1 0 auto;
+		}
+		p{
+			margin-bottom: 7px;
+		}
+		.select-wrp{
+			margin-left: 0;
+			min-width: 100%;
+		}
+	}
 }
 @media only screen and (max-width: 585.5px) {
 	.header__left{
-		min-width: 100%;
+		width: 100%;
 		text-align: center;
 		margin-top: -10px
 	}
@@ -4703,17 +4724,6 @@ $dy: #ef9e1b;
 		max-height: 195px;
 		padding-left: 10px;
 		padding-right: 10px;
-	}
-	.popup__form_teacher{
-		flex-wrap: wrap;
-		justify-content: flex-start !important;
-		p{
-			margin-bottom: 7px;
-		}
-		.select-wrp{
-			margin-left: 0;
-			min-width: 100%;
-		}
 	}
 	.popup{
 		padding-left: 15px !important;
