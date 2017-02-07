@@ -4173,7 +4173,7 @@ $dy: #ef9e1b;
 	.s_teachers{
 		padding-top: 80px;
 		&__slider{
-			min-height: 805px;
+			min-height: 745px;
 		}
 		.g_arrow{
 			display: none;
@@ -4395,6 +4395,10 @@ $dy: #ef9e1b;
 			&._fixed{
 				.s_first__hamb{
 					color: #fff;
+					svg{
+						margin-top: -2px;
+						margin-left: 10px;
+					}
 				}
 				.container{
 					position: fixed;
@@ -4475,8 +4479,7 @@ $dy: #ef9e1b;
 			padding-right: 20px;
 			height: 40px;
 			display: block;
-			font-style: italic;
-			font-weight: 700;
+			font-weight: 400;
 			transition: $t;
 			color: transparent;
 		}
@@ -4517,8 +4520,29 @@ $dy: #ef9e1b;
 	}
 	.s_3d{
 		.lSSlideOuter .lSPager.lSpg{
-			padding-top: 10px;
-			padding-bottom: 30px;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.btn{
+			margin-top: 25px;
+		}
+	}
+	.lSSlideOuter .lSPager.lSpg{
+		max-height: 18px;
+		overflow: hidden;
+		>li{
+			padding: 0 2px;
+			&:hover,
+			&.active{
+				a{
+					box-shadow: none;
+					border-color: $d;
+				}
+			}
+			a{
+				width: 10px;
+				height: 10px;
+			}
 		}
 	}
 }
