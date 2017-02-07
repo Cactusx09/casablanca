@@ -366,7 +366,7 @@ $dy: #ef9e1b;
 	}
 	&__logo{
 		transition: $t;
-		flex: 1 0 auto;
+//		flex: 1 0 auto;
 		&:hover{
 			transform: translateZ(0)  scale(.95);
 		}
@@ -3947,11 +3947,6 @@ $dy: #ef9e1b;
 	}
 }
 @media only screen and (max-width: 1199.5px) {
-	.header__left{
-		br{
-			display: none;
-		}
-	}
 	.header__logo{
 		margin-left: 15px;
 		margin-right: 15px;
@@ -4179,6 +4174,9 @@ $dy: #ef9e1b;
 		padding-top: 80px;
 		&__slider{
 			min-height: 805px;
+		}
+		.g_arrow{
+			display: none;
 		}
 	}
 	.s_teachers__item{
@@ -4501,6 +4499,26 @@ $dy: #ef9e1b;
 		.select-wrp{
 			margin-left: 0;
 			min-width: 100%;
+		}
+	}
+}
+@media only screen and (max-width: 640.5px) {
+	.s_3d__gallery{
+		margin-left: 5px;
+		margin-bottom: -30px;
+		a{
+			display: block;
+			padding: 0;
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.s_3d{
+		.lSSlideOuter .lSPager.lSpg{
+			padding-top: 10px;
+			padding-bottom: 30px;
 		}
 	}
 }

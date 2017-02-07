@@ -58,43 +58,21 @@ $(document).ready(function () {
 	});
 	//gallery blocks
 	if ($('*').is('.s_3d__gallery')) {
-		$('.s_3d__gallery').waterfall();
+		if(window.matchMedia('(min-width: 640px)').matches){
+			$('.s_3d__gallery').waterfall();
+		}else{
+			$('.s_3d__gallery').lightSlider({
+				item:1,
+				controls: !1,
+				adaptiveHeight: true
+			});
+		}
 	}
 	//card popup
 	$('.s_card__calendar_tabcol span').click(function(){
 		$('.popup._teacher, .overlay').addClass('visible');
 		var px = window.pageYOffset;
 		$('.popup').css('top',px+'px');
-		var n_day = $(this).closest('.s_card__calendar_tabcol').index()+1,
-			day = '';
-		switch(n_day){
-			case 1:
-				day = 'Понедельник';
-				break;
-			case 2:
-				day = 'Вторник';
-				break;
-			case 3:
-				day = 'Среда';
-				break;
-			case 4:
-				day = 'Четверг';
-				break;
-			case 5:
-				day = 'Пятница';
-				break;
-			case 6:
-				day = 'Суббота';
-				break;
-			case 7:
-				day = 'Воскресенье';
-				break;
-			default:
-				day = 'Не выбран';
-		}
-		var level = $(this).closest('.s_card__calendar').find('.s_card__calendar_dif span.current').text();
-		$('.popup__form_trial b').text(level);
-		$('.popup__form_teacher2 span').first().find('small').text(day);
 		$('.popup__form_teacher2 span').last().find('small').text($(this).text());
 	});
 	//lazy load images
@@ -187,9 +165,7 @@ $(document).ready(function () {
 			processScroll();
         });
 		total_teachers = $frame.find('li').length/2;
-		if($('*').is('.s_about')){
-			sl_teachers.activate(total_teachers);
-		}
+		sl_teachers.activate(total_teachers);
 	}
 	//abonements toogle
 	$('.s_price__item_arr').click(function () {
@@ -429,8 +405,6 @@ $(document).ready(function () {
 				$(this).find('.btn').addClass('active');
 			}
 		});
-		var px = window.pageYOffset;
-		$('.popup').css('top','50px');
 	});
 	$('.s_card__blocks_block p a').click(function(e){
 		e.preventDefault();
@@ -439,14 +413,6 @@ $(document).ready(function () {
 		$('.popup').css('top',px+'px');
 		text = $('.s_card__trial_body').find('h3 span').text();
 		$('.popup._trial').find('.btn b').text(text+' р.');
-	});
-	$('.s_card__who_item .s_teachers__item_more').click(function(e){
-		e.preventDefault();
-		var px = window.pageYOffset;
-		$('.popup').css('top',px+'px');
-		$('.popup._about,.overlay').addClass('visible');
-		var n_el = $(this).closest('.s_teachers__item_txt').data('num')-1;
-		sl_teachers2.activate(n_el);
 	});
 	//popups
 	$('._open_pop').click(function(e){
@@ -466,13 +432,11 @@ $(document).ready(function () {
 		}
 		if(name=='_call'){
 			if($(this).hasClass('header__circle')){
-				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('callbackform');");
+				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('callbackform'); return true");
 			}else if($(this).closest('.s_enough__content_btns').length){
 				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('consult');");
 			}else if($(this).closest('.s_contacts__block').length){
 				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('zakazzvonkamap');");
-			}else if($(this).closest('.s_once')){
-				$('.popup._call').find('.btn').attr('onclick',"yaCounter35567990.reachGoal('probnoe4');");
 			}
 			if(window.pageYOffset > $('.s_contacts').offset().top-500){
 				$('#popup_map').hide();
@@ -638,9 +602,7 @@ $(document).ready(function () {
 		sl_teachers2.on('change', function (eventName) {
 			var n = $frame.find('li').length-1,
 				sl_teachers_n2 = this.rel.activeItem;
-			if($('*').is('.s_about')){
-				sl_teachers.activate(sl_teachers_n2);
-			}
+			sl_teachers.activate(sl_teachers_n2);
         	if(sl_teachers_n2==n){
 				$frame.find('.s_teachers__arr_right2').addClass('disabled');
 			}
